@@ -20,8 +20,11 @@
 !frickity/**
 !fullcalendar/**
 !process/**
-!/**.php
-!/**.txt
+!**.php
+!**.html
+!**.js
+!**.css
+!**.txt
 
 # Ignore
 **_settings_entrance.php
