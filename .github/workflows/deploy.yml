@@ -2,20 +2,19 @@ name: FTP Deploy
 
 on:
   push:
-    branches:
-      - master
+    branches:           
+      - master    
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@master                   
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
-        with:
-          ftp-server: ${{ secrets.FTP_HOST }}:${{ secrets.FTP_PORT }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          git-ftp-args: --remote-root ${{ secrets.FTP_REMOTE_ROOT }}
-          local-dir: public
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0   
+        env:                                        
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          LOCAL_DIR: ./public
+          REMOTE_DIR: "/home/users/1/nisor/web/heteml-git_test/master"
