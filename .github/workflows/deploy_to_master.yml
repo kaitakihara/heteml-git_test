@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master                   
-      - name: FTP-Deploy-Action - develop
+      - name: FTP-Deploy-Action - master
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
