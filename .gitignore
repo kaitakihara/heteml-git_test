@@ -25,6 +25,7 @@
 !**.js
 !**.css
 !**.txt
+!**.yml
 
 # Ignore
 **_settings_entrance.php
